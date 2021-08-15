@@ -1,0 +1,80 @@
+{
+  "name": "codewars-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src -d build",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "test:cov": "jest --coverage",
+    "update-index": "node ./lib/index/index-generator.js",
+    "install-generator-deps": "cd ./lib/katas && npm install",
+    "create-kata": "node --no-warnings ./lib/katas/kata-generator.js --link"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.7.1",
+    "ramda": "^0.27.1",
+    "ts-jest": "^27.0.5",
+    "typescript": "^4.3.5"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.29.3",
+    "@typescript-eslint/parser": "^4.29.3",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-standard": "^16.0.3",
+    "eslint-plugin-import": "^2.24.0",
+    "eslint-plugin-jest": "^24.4.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^5.1.0",
+    "eslint-plugin-standard": "^5.0.0",
+    "husky": "^7.0.1",
+    "jest": "^27.0.6",
+    "jest-codemods": "^0.23.1",
+    "jest-extended": "^0.11.5",
+    "prettier": "^2.3.2",
+    "ts-standard": "^10.0.0"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "setupFilesAfterEnv": [
+      "jest-extended"
+    ],
+    "collectCoverage": true,
+    "coverageReporters": [
+      "json-summary",
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "transform": {
+      "^.+\\.(ts|tsx)$": "<rootDir>/config/jest/preprocessor.js",
+      "^.+\\.(ts|tsx)?$": "ts-jest"
+    },
+    "testPathIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleNameMapper": {
+      "\\.(css|jpg|png|svg)$": "<rootDir>/node_modules/jest-css-modules"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "js",
+      "json"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  },
+  "packageManager": "yarn@3.0.0"
+}
