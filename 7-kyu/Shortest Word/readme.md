@@ -1,0 +1,11 @@
+# Shortest Word
+
+Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+
+Notes:
+
+- [Kata Link](https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9)
+- [Discuss Link](https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/discuss)
+- [Solutions Link](https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/solutions)
